@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLineEdit, QLabel
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QMovie
 
 
 class Calculator(QWidget):
@@ -20,6 +20,13 @@ class Calculator(QWidget):
         background_label.setGeometry(0, 0, 1920, 1080)
         pixmap = QPixmap("amnyam.jpg")
         background_label.setPixmap(pixmap)
+
+        animation = QLabel(self)
+        animation.setGeometry(1430, -350, 1000, 1000)
+        gif_path = "amnyam17.gif"
+        movie = QMovie(gif_path)
+        animation.setMovie(movie)
+        movie.start()
 
         self.display = QLineEdit(self)
         self.display.setGeometry(153, 100, 650, 120)
